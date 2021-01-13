@@ -1,5 +1,11 @@
 # Дипломный проект профессии «Тестировщик»
 
+ [План Автоматизации](https://github.com/Samsony1/DiplomaTest/blob/main/docs/Plan.md)
+ 
+ [Отчет по итогам Тестирования](https://github.com/Samsony1/DiplomaTest/blob/main/docs/Report.md)
+ 
+ [Отчет по итогам автоматизации](https://github.com/Samsony1/DiplomaTest/blob/main/docs/Summary.md)
+
 ## Инструкция по запуску
 
 1. Запустить контейнеры docker:  

@@ -5,6 +5,8 @@
  [Отчет по итогам Тестирования](https://github.com/Samsony1/DiplomaTest/blob/main/docs/Report.md)
  
  [Отчет по итогам Автоматизации](https://github.com/Samsony1/DiplomaTest/blob/main/docs/Summary.md)
+ 
+ [Allure Report](https://github.com/Samsony1/DiplomaTest/blob/main/docs/AllureServe.png)
 
 ## Инструкция по запуску
 

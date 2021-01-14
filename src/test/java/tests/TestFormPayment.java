@@ -2,9 +2,9 @@ package tests;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
-import lib.DBUtils;
-import lib.FormPage;
-import lib.Status;
+import lib.Utilits.DBUtils;
+import lib.Page.FormPage;
+import lib.Model.Status;
 import org.junit.jupiter.api.*;
 
 import java.sql.SQLException;

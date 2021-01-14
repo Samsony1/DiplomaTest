@@ -1,12 +1,13 @@
 package tests;
 
-import lib.*;
 import java.sql.SQLException;
-import lombok.val;
+
+import lib.Model.Status;
+import lib.Page.FormPage;
+import lib.Utilits.DBUtils;
 import org.junit.jupiter.api.*;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
-import java.util.List;
 
 public class TestFormPaymentCredit {
     private FormPage formPage;

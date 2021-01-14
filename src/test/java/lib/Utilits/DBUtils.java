@@ -1,21 +1,17 @@
-package lib;
+package lib.Utilits;
 
-import com.mysql.cj.x.protobuf.MysqlxDatatypes;
+import lib.Model.CreditModel;
+import lib.Model.PaymentModel;
+import lib.Model.Status;
 import lombok.val;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.List;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Properties;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DBUtils {
     private static String url = System.getProperty("db.url");
-    private static String appURL = System.getProperty("app.url");
-    private static String appPORT = System.getProperty("app.port");
     private static String userDB = System.getProperty("app.userDB");
     private static String password = System.getProperty("app.password");
 

@@ -19,7 +19,7 @@
 
 *[Некорректный ввод данных(буквенные символы) в поле "Владелец" при покупке тура #3](https://github.com/Samsony1/DiplomaTest/issues/3)
 
-*[При вводе невалидных данных в поле "Владелец" активной (APPROVED) карты производится операция покупки](https://github.com/Samsony1/DiplomaTest/issues/4)
+*[При вводе невалидных данных в поле "Владелец" активной (APPROVED) карты производится операция покупки #4](https://github.com/Samsony1/DiplomaTest/issues/4)
 
 
 

@@ -2,9 +2,10 @@ package tests;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
-import lib.Utilits.DBUtils;
-import lib.Page.FormPage;
 import lib.Model.Status;
+import lib.Page.FormPage;
+import lib.Page.FormPage.TYPE;
+import lib.Utilits.DBUtils;
 import org.junit.jupiter.api.*;
 
 import java.sql.SQLException;
@@ -35,7 +36,7 @@ public class TestFormPayment {
     @Test
     @DisplayName("Оплата по активной карте, обычная покупка, валидные данные")
     void shouldPayByApprovedCard() throws SQLException {
-        formPage.buyForYourMoney();
+        TYPE.buyForYourMoney();
         formPage.setCardNumber("4444444444444441");
         formPage.setCardMonth("08");
         formPage.setCardYear("22");
@@ -48,7 +49,7 @@ public class TestFormPayment {
     @Test
     @DisplayName("Оплата по неактивной карте, обычная покупка, валидные данные")
     void shouldNoPayByDeclinedCard() throws SQLException {
-        formPage.buyForYourMoney();
+        TYPE.buyForYourMoney();
         formPage.setCardNumber("4444444444444442");
         formPage.setCardMonth("08");
         formPage.setCardYear("22");
@@ -61,7 +62,7 @@ public class TestFormPayment {
     @Test
     @DisplayName("Оплата по неизвестной карте, обычная покупка, валидные данные")
     void shouldNoPayByUnknownCard() throws SQLException {
-        formPage.buyForYourMoney();
+        TYPE.buyForYourMoney();
         formPage.setCardNumber("4444444444444443");
         formPage.setCardMonth("08");
         formPage.setCardYear("22");
@@ -74,7 +75,7 @@ public class TestFormPayment {
     @Test
     @DisplayName("Оплата по карте c невалидным номером карты, обычная покупка")
     void shouldNoPayInvalidCardNumberField() throws SQLException {
-        formPage.buyForYourMoney();
+        TYPE.buyForYourMoney();
         formPage.setCardNumber("3333 2323 DSDF ASSD");
         formPage.setCardMonth("08");
         formPage.setCardYear("22");
@@ -87,7 +88,7 @@ public class TestFormPayment {
     @Test
     @DisplayName("Оплата по карте c невалидным номером месяца, обычная покупка")
     void shouldNoPayInvalidMonthField() throws SQLException {
-        formPage.buyForYourMoney();
+        TYPE.buyForYourMoney();
         formPage.setCardNumber("4444444444444441");
         formPage.setCardMonth("13");
         formPage.setCardYear("22");
@@ -100,7 +101,7 @@ public class TestFormPayment {
     @Test
     @DisplayName("Оплата по карте c невалидным номером года, обычная покупка")
     void shouldNoPayInvalidYearField() throws SQLException {
-        formPage.buyForYourMoney();
+        TYPE.buyForYourMoney();
         formPage.setCardNumber("4444444444444441");
         formPage.setCardMonth("08");
         formPage.setCardYear("18");
@@ -113,7 +114,7 @@ public class TestFormPayment {
     @Test
     @DisplayName("Оплата по карте c невалидным полем владелец, обычная покупка")
     void shouldNoPayInvalidCardOwnerField() throws SQLException {
-        formPage.buyForYourMoney();
+        TYPE.buyForYourMoney();
         formPage.setCardNumber("4444444444444441");
         formPage.setCardMonth("08");
         formPage.setCardYear("22");
@@ -126,7 +127,7 @@ public class TestFormPayment {
     @Test
     @DisplayName("Оплата по карте c невалидным полем CVV, обычная покупка")
     void shouldNoPayInvalidCVVField() throws SQLException {
-        formPage.buyForYourMoney();
+        TYPE.buyForYourMoney();
         formPage.setCardNumber("4444444444444441");
         formPage.setCardMonth("08");
         formPage.setCardYear("22");
@@ -139,7 +140,7 @@ public class TestFormPayment {
     @Test
     @DisplayName("Оплата по карте c пустым номером карты, обычная покупка")
     void shouldNoPayEmptyCardNumberField() throws SQLException {
-        formPage.buyForYourMoney();
+        TYPE.buyForYourMoney();
         formPage.setCardNumber("");
         formPage.setCardMonth("08");
         formPage.setCardYear("22");
@@ -152,7 +153,7 @@ public class TestFormPayment {
     @Test
     @DisplayName("Оплата по карте c пустым номером месяца, обычная покупка")
     void shouldNoPayEmptyMonthField() throws SQLException {
-        formPage.buyForYourMoney();
+        TYPE.buyForYourMoney();
         formPage.setCardNumber("4444444444444441");
         formPage.setCardMonth("");
         formPage.setCardYear("22");
@@ -165,7 +166,7 @@ public class TestFormPayment {
     @Test
     @DisplayName("Оплата по карте c пустым номером года, обычная покупка")
     void shouldNoPayEmptyYearField() throws SQLException {
-        formPage.buyForYourMoney();
+        TYPE.buyForYourMoney();
         formPage.setCardNumber("4444444444444441");
         formPage.setCardMonth("08");
         formPage.setCardYear("");
@@ -178,7 +179,7 @@ public class TestFormPayment {
     @Test
     @DisplayName("Оплата по карте c пустым полем владелец, обычная покупка")
     void shouldNoPayEmptyCardOwnerField() throws SQLException {
-        formPage.buyForYourMoney();
+        TYPE.buyForYourMoney();
         formPage.setCardNumber("4444444444444441");
         formPage.setCardMonth("08");
         formPage.setCardYear("22");
@@ -191,7 +192,7 @@ public class TestFormPayment {
     @Test
     @DisplayName("Оплата по карте c пустым полем CVV, обычная покупка")
     void shouldNoPayEmptyCVVField() throws SQLException {
-        formPage.buyForYourMoney();
+        TYPE.buyForYourMoney();
         formPage.setCardNumber("4444444444444441");
         formPage.setCardMonth("08");
         formPage.setCardYear("22");
@@ -205,7 +206,7 @@ public class TestFormPayment {
     @Test
     @DisplayName("Оплата по активной карте, обычная покупка, валидные данные, проверка записи в БД")
     void shouldPayByApprovedCardStatusInDB()  throws SQLException{
-        formPage.buyForYourMoney();
+        TYPE.buyForYourMoney();
         formPage.setCardNumber("4444444444444441");
         formPage.setCardMonth("08");
         formPage.setCardYear("22");
@@ -219,7 +220,7 @@ public class TestFormPayment {
     @Test
     @DisplayName("Оплата по неактивной карте, обычная покупка, валидные данные, проверка записи в БД")
     void shouldNoPayByDeclinedCardStatusInDB() throws SQLException {
-        formPage.buyForYourMoney();
+        TYPE.buyForYourMoney();
         formPage.setCardNumber("4444444444444442");
         formPage.setCardMonth("08");
         formPage.setCardYear("22");

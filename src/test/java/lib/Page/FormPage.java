@@ -1,8 +1,8 @@
 package lib.Page;
 
 import com.codeborne.selenide.SelenideElement;
-import java.util.List;
 
+import java.util.List;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.visible;
@@ -23,18 +23,6 @@ public class FormPage {
     SelenideElement year = input.get(2);
     SelenideElement cardOwner = input.get(3);
     SelenideElement cvcOrCvvNumber = input.get(4);
-
-    public void buyForYourMoney() {
-        open(appURL +":"+appPORT);
-        $$(".button__content").find(exactText("Купить")).click();
-        $$(".heading_theme_alfa-on-white").find(exactText("Оплата по карте")).shouldBe(visible);
-    }
-
-    public void buyOnCredit(){
-        open(appURL +":"+appPORT);
-        $$(".button__content").find(exactText("Купить в кредит")).click();
-        $$(".heading_theme_alfa-on-white").find(exactText("Кредит по данным карты")).shouldBe(visible);
-    }
 
     public void checkMessageSuccess() {
         $$(".notification__title").find(exactText("Успешно")).waitUntil(visible, 15000);
@@ -63,25 +51,36 @@ public class FormPage {
     public void setCardNumber(String cNumber) {
         cardNumber.setValue(cNumber);
     }
-
     public void setCardMonth(String cMonth) {
         month.setValue(cMonth);
     }
-
     public void setCardYear(String cYear) {
         year.setValue(cYear);
     }
-
     public void setCardOwner(String cOwner) {
         cardOwner.setValue(cOwner);
     }
-
     public void setCardCVV(String cCvv) {
         cvcOrCvvNumber.setValue(cCvv);
     }
-
-    public void pushСontinueButton(){
+    public void pushСontinueButton() {
         $$(".button__content").find(exactText("Продолжить")).click();
     }
 
+
+
+    public static class TYPE {
+
+        public static void buyForYourMoney() {
+            open(appURL + ":" + appPORT);
+            $$(".button__content").find(exactText("Купить")).click();
+            $$(".heading_theme_alfa-on-white").find(exactText("Оплата по карте")).shouldBe(visible);
+        }
+
+        public static void buyOnCredit() {
+            open(appURL + ":" + appPORT);
+            $$(".button__content").find(exactText("Купить в кредит")).click();
+            $$(".heading_theme_alfa-on-white").find(exactText("Кредит по данным карты")).shouldBe(visible);
+        }
+    }
 }

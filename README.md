@@ -6,7 +6,7 @@
  
  [Отчет по итогам Автоматизации](https://github.com/Samsony1/DiplomaTest/blob/main/docs/Summary.md)
  
- [Allure Report](https://github.com/Samsony1/DiplomaTest/blob/main/docs/AllureServe.png)
+ [Allure Report](https://github.com/Samsony1/DiplomaTest/blob/main/docs/Allure.jpg)
 
 ## Инструкция по запуску
 
